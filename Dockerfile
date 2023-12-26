@@ -5,7 +5,7 @@ FROM ruby:2.7.2-alpine
 
 WORKDIR /usr/src/app
 
-# COPY Gemfile Gemfile.lock ./
+COPY Gemfile Gemfile.lock ./
 
 RUN apk add --no-cache build-base libffi-dev tzdata curl libpq shared-mime-info imagemagick ghostscript-fonts
 RUN apk add --update --no-cache \
@@ -19,12 +19,7 @@ RUN apk --update add less
 # COPY --from=madnight/alpine-wkhtmltopdf-builder:0.12.5-alpine3.10-606718795 \
 #     /bin/wkhtmltopdf /bin/wkhtmltopdf
 
-# RUN bundle install
-# RUN bundle install --without development test
-
-RUN gem install net-imap -v 0.3.7
-RUN gem install rails -v 6.1
-
+RUN bundle install
 
 # ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.7.3/wait /wait
 # RUN chmod +x /wait
