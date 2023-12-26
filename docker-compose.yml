@@ -1,0 +1,22 @@
+version: "3"
+services:
+  db:
+    container_name: sus-db
+    image: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_DB=sus-db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_HOST=db
+    volumes:
+      - ./db_backup:/usr/src/app
+  web:
+    container_name: sus
+    build: .
+    command: sh -c "while [ true ]; do sleep 10; done"
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
