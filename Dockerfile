@@ -22,6 +22,10 @@ RUN apk --update add less
 # RUN bundle install
 # RUN bundle install --without development test
 
+RUN gem install net-imap -v 0.3.7
+RUN gem install rails -v 6.1
+
+
 # ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.7.3/wait /wait
 # RUN chmod +x /wait
 
