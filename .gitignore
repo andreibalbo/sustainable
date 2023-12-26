@@ -13,4 +13,6 @@ yarn-debug.log*
 # we really don't want this in version control
 .env.*.local
 
-/temp
+# avoid tmp and log file changes
+tmp
+*.log
