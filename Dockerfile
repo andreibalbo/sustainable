@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 
 COPY Gemfile Gemfile.lock ./
 
-RUN apk add --no-cache build-base libffi-dev tzdata curl libpq shared-mime-info imagemagick ghostscript-fonts
+RUN apk add --no-cache build-base libffi-dev tzdata curl libpq shared-mime-info imagemagick ghostscript-fonts git
 RUN apk add --update --no-cache \
     libgcc libstdc++ libx11 glib libxrender libxext libintl postgresql-dev
 
