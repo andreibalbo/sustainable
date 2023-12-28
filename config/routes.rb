@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   #   post "update_rating"
   # end
   resources :widget_ratings, only: [ :create ]
-
+  
+  # namespacing to avoid confusion on scopes
+  namespace :customer_service do
+    resources :widgets, only: [ :show, :update, :destroy ]
+  end
 
   get "manufacturer/:id", to: "manufacturers#show"
 
