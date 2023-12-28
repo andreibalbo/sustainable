@@ -16,3 +16,6 @@ yarn-debug.log*
 # avoid tmp and log file changes
 tmp
 *.log
+
+# avoid js package logs
+/public/packs
