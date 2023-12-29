@@ -10,6 +10,6 @@
   out of <%= @widget.manufacturer.address.country %>
 </h3>
 
-<% # Using locals instead of keeping the instance variable %> 
-<% # to be clear on how to use the partial %>
+<%# Using locals instead of keeping the instance variable %> 
+<%# to be clear on how to use the partial %>
 <%= render partial: "rating", locals: { widget: @widget } %>
