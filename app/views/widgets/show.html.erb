@@ -1,5 +1,5 @@
 <h1><%= @widget.name %></h1> 
-<h2>ID #<%= @widget.widget_id %></h2>
+<h2>ID #<%= styled_widget_id(@widget.widget_id) %></h2>
 <% if flash[:notice].present? %>
   <aside>
     <%= flash[:notice] %>
@@ -12,4 +12,7 @@
 
 <%# Using locals instead of keeping the instance variable %> 
 <%# to be clear on how to use the partial %>
-<%= render partial: "rating", locals: { widget: @widget } %>
+<%# <%= render partial: "rating", locals: { widget: @widget } %>
+
+<%# Usage of helper methods to simplify complex partial calls %>
+<%= widget_rating_component(@widget) %>
