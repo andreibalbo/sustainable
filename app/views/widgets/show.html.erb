@@ -1,18 +1,18 @@
-<h1><%= @widget.name %></h1> 
-<h2>ID #<%= @widget.styled_widget_id %></h2>
+<h1><%= @widget_presenter.name %></h1> 
+<h2>ID #<%= @widget_presenter.styled_widget_id %></h2>
 <% if flash[:notice].present? %>
   <aside>
     <%= flash[:notice] %>
   </aside>
 <% end %>
 <h3>
-  Built by <%= @widget.manufacturer.name %>
-  out of <%= @widget.manufacturer.address.country %>
+  Built by <%= @widget_presenter.manufacturer.name %>
+  out of <%= @widget_presenter.manufacturer.address.country %>
 </h3>
 
 <%# Using locals instead of keeping the instance variable %> 
 <%# to be clear on how to use the partial %>
-<%# <%= render partial: "rating", locals: { widget: @widget } %>
+<%# <%= render partial: "rating", locals: { widget_presenter: @widget_presenter } %>
 
 <%# Usage of helper methods to simplify complex partial calls %>
-<%= widget_rating_component(@widget) %>
+<%= widget_rating_component(@widget_presenter) %>

@@ -27,7 +27,7 @@ class WidgetsController < ApplicationController
       end 
     end
 
-    @widget = WidgetPresenter.new(widget)
+    @widget_presenter = WidgetPresenter.new(widget)
   end
 
   def index

@@ -1,7 +1,7 @@
 module ApplicationHelper
-  def widget_rating_component(widget, suppress_cta: false)
+  def widget_rating_component(widget_presenter, suppress_cta: false)
     render partial: "widgets/rating",
-           locals: { widget: widget, suppress_cta: suppress_cta }
+           locals: { widget_presenter: widget_presenter, suppress_cta: suppress_cta }
   end
 
   def styled_widget_id(formatted_id) 
