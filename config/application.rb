@@ -18,5 +18,8 @@ module Sustainable
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.after_initialize do |app|
+      app.config.paths.add 'app/presenters', :eager_load => true
+    end
   end
 end
