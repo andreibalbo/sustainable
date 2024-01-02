@@ -1,12 +1,17 @@
-<h1><%= @widget_presenter.name %></h1> 
-<h2>ID #<%= @widget_presenter.styled_widget_id %></h2>
+<header class="widget-title">
+  <h1 class="widget-title__name"><%= @widget_presenter.name %></h1> 
+  <h2 class="widget-title__id">ID #<%= @widget_presenter.styled_widget_id %></h2>
+</header>
+
 <% if flash[:notice].present? %>
   <aside>
     <%= flash[:notice] %>
   </aside>
 <% end %>
-<h3>
+<h3 class="fwb ttu">
   Built by <%= @widget_presenter.manufacturer.name %>
+</h3>
+<h3 class="normal courier">
   out of <%= @widget_presenter.manufacturer.address.country %>
 </h3>
 
@@ -16,3 +21,23 @@
 
 <%# Usage of helper methods to simplify complex partial calls %>
 <%= widget_rating_component(@widget_presenter) %>
+
+<%# Object oriented CSS %>
+<style>
+  .widget-title__name { 
+    font-weight: bold; 
+    text-transform: uppercase;
+  }
+  .widget-title__id { 
+    font-weight: normal; 
+    font-family: monospace;
+  }
+</style>
+
+<%# Functional CSS %>
+<style>
+  .fwb { font-weight: bold }
+  .normal { font-weight: normal }
+  .ttu { text-transform: uppercase } 
+  .courier { font-family: Courier, monospace }
+</style>
