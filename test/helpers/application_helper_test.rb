@@ -33,5 +33,5 @@ class ApplicationHelperTest < ActionView::TestCase
     
     assert_match /<section/m, rendered_component
     assert rendered_component.html_safe?
-end
+  end
 end
